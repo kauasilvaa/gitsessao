@@ -1,11 +1,20 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["usuario"])) {
+    header ("location: login.php");
+    exit;
+}
+
+echo "bem-vindo, " . $_SESSION["usuario"] . "! está é a página de dashboard.";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TELA DE DASHBOARD </title>
 </head>
 <body>
-<h1> TELA DE DASHBOARD </h1>
+ <a href="logout.php">Sair</a>
+
 </body>
 </html>
